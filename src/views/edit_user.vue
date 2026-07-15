@@ -107,7 +107,7 @@ const check = async () => {
 
   alert("Edit successfully");
 
-  router.push("/");
+  router.push("/Vue3-Composition-API-/");
 };
 </script>
 

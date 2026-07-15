@@ -7,15 +7,15 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/",
+      path: "/Vue3-Composition-API-/",
       component: show_users,
     },
     {
-      path: "/add-user",
+      path: "/Vue3-Composition-API-/add-user",
       component: add_user,
     },
     { 
-      path: "/edit-user/:id", 
+      path: "/Vue3-Composition-API-/edit-user/:id", 
       component: edit_user
      },
   ],

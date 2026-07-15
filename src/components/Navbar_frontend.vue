@@ -11,7 +11,7 @@
         </div>
 
         <div>
-        <RouterLink to="/">
+        <RouterLink to="/Vue3-Composition-API-/">
         <h1 class="text-xl font-bold">Vue3 Learn</h1>
 
           <p class="text-xs text-white/70">Composition API</p>
