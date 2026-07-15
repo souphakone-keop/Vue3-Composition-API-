@@ -4,7 +4,7 @@ import add_user from "../views/add_user.vue";
 import edit_user from "../views/edit_user.vue";
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: "/Vue3-Composition-API-/",
@@ -14,10 +14,10 @@ const router = createRouter({
       path: "/Vue3-Composition-API-/add-user",
       component: add_user,
     },
-    { 
-      path: "/Vue3-Composition-API-/edit-user/:id", 
-      component: edit_user
-     },
+    {
+      path: "/Vue3-Composition-API-/edit-user/:id",
+      component: edit_user,
+    },
   ],
 });
 
