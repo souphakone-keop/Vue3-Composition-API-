@@ -7,6 +7,7 @@
       </div>
 
       <div class="space-y-5">
+        <!-- Email -->
         <div>
           <label class="mb-2 block font-semibold"> Email </label>
 
@@ -18,6 +19,7 @@
           />
         </div>
 
+        <!-- Password -->
         <div>
           <label class="mb-2 block font-semibold"> New Password </label>
 
@@ -29,6 +31,7 @@
           />
         </div>
 
+        <!-- Confirm Password -->
         <div>
           <label class="mb-2 block font-semibold"> Confirm Password </label>
 
@@ -61,54 +64,88 @@ const route = useRoute();
 
 const user = ref({
   email: "",
+
   password: "",
+
   confirmPassword: "",
 });
 
+// GET USER BY ID
 const fetch_single_user = async () => {
   try {
     const res = await axios.get(
       `${import.meta.env.VITE_API}/users/${route.params.id}`,
     );
 
-    user.value.email = res.data.data.email;
+    // backend ส่ง data เป็น array
+    user.value.email = res.data.data[0].email;
   } catch (err) {
     console.log(err);
+
+    alert("Cannot fetch user");
   }
 };
 
-onMounted(fetch_single_user);
-
+// UPDATE USER
 const edit_user = async () => {
   try {
+    if (!user.value.email || !user.value.password) {
+      alert("Please fill all fields");
+
+      return false;
+    }
+
     const res = await axios.put(
       `${import.meta.env.VITE_API}/users/${route.params.id}`,
+
       {
         email: user.value.email,
+
         password: user.value.password,
       },
     );
 
-    console.log(res);
+    console.log(res.data);
+
+    return true;
   } catch (err) {
     console.log(err);
+
+    return false;
   }
 };
 
+// CHECK PASSWORD
 const check = async () => {
-  if (user.value.password !== user.value.confirmPassword) {
-    alert("Password ไม่ตรงกัน");
-    user.value.password = "";
-    user.value.confirmPassword = "";
+  if (!user.value.password) {
+    alert("Please fill in the password");
+
     return;
   }
 
-  await edit_user();
+  if (user.value.password !== user.value.confirmPassword) {
+    alert("Passwords do not match");
 
-  alert("Edit successfully");
+    user.value.password = "";
 
-  router.push("/Vue3-Composition-API-/");
+    user.value.confirmPassword = "";
+
+    return;
+  }
+
+  const success = await edit_user();
+
+  if (success) {
+    alert("Edit successfully");
+
+    router.push("/");
+  }
 };
+
+// RUN WHEN PAGE LOAD
+onMounted(() => {
+  fetch_single_user();
+});
 </script>
 
 <style scoped></style>

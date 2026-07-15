@@ -59,7 +59,7 @@
       </button>
 
       <button
-        @click="router.push('/Vue3-Composition-API-/')"
+        @click="router.push('/')"
         class="btn btn-ghost mt-3 w-full rounded-xl"
       >
         Cancel
@@ -112,7 +112,7 @@ const check = async () => {
 
   alert("ADD USER SUCCESSFULLY");
 
-  router.push("/Vue3-Composition-API-/");
+  router.push("/");
 };
 </script>
 

@@ -9,7 +9,7 @@
       </div>
 
       <div v-if="users.length > 0">
-        <RouterLink to="/Vue3-Composition-API-/add-user">
+        <RouterLink to="/add-user">
           <button class="btn btn-primary rounded-xl">+ Add User</button>
         </RouterLink>
       </div>
@@ -66,7 +66,7 @@
 
               <td>
                 <div class="flex justify-center gap-2">
-                  <RouterLink :to="`/Vue3-Composition-API-/edit-user/${items.id}`">
+                  <RouterLink :to="`edit-user/${items.id}`">
                     <button class="btn btn-sm btn-warning">Edit</button>
                   </RouterLink>
 

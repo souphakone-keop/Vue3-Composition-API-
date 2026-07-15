@@ -11,12 +11,11 @@
         </div>
 
         <div>
-        <RouterLink to="/Vue3-Composition-API-/">
-        <h1 class="text-xl font-bold">Vue3 Learn</h1>
+          <RouterLink to="/">
+            <h1 class="text-xl font-bold">Vue3 Learn</h1>
 
-          <p class="text-xs text-white/70">Composition API</p>
-        </RouterLink>
-           
+            <p class="text-xs text-white/70">Composition API</p>
+          </RouterLink>
         </div>
       </a>
     </div>
@@ -74,17 +73,13 @@
           </li>
 
           <li>
-            <a> 👤 Profile </a>
-          </li>
-
-          <li>
-            <a> ⚙️ Settings </a>
-          </li>
-
-          <div class="divider my-1"></div>
-
-          <li>
-            <a class="text-error"> 🚪 Logout </a>
+            <a
+              href="https://souphakone-kp.github.io/souphakone_keopheth_website_portfolio/#/home"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              👤 Profile
+            </a>
           </li>
         </ul>
       </div>
